@@ -3,7 +3,7 @@ module.exports = function () {
   const dev = true;
   return {
     mode: dev ? 'development' : 'production',
-    entry: './src/index.js',
+    entry: ['@babel/polyfill', './src/index.js'],
     output: {
       path: path.resolve(__dirname, 'dist'),
       filename: dev ? 'axios.js' : 'axios.min',
@@ -27,7 +27,7 @@ module.exports = function () {
     },
     // 开启 webpack-dev-server 插件
     devServer: {
-      port: 8000,
+      port: 8003,
       open: true
     }
   }
